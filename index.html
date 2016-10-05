@@ -21,7 +21,7 @@ function showlocation(){
 	navigator.geolocation.watchPosition(callback);
 }
 function callback(position){
-	document.getElementById('time').innerHTML=Date();;
+	document.getElementById('time').innerHTML=Date();
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
 	document.getElementById('longitude').innerHTML=position.coords.longitude;
 }
