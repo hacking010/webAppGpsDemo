@@ -7,24 +7,15 @@ GPS Poll
 Time: <span id="time">..</span> <br>
 Latitude: <span id="latitude">..</span> <br>
 Longitude: <span id="longitude">..</span>
-<div id="demoMap" style="height:250px"></div>
+<div id="map" style="width:100%;height:500px"></div>
 
-
-  <script src="OpenLayers.js"></script>
+<SCRIPT src="https://maps.googleapis.com/maps/api/js?callback=myMap"></SCRIPT>
 <SCRIPT>
-
-
-map = new OpenLayers.Map("demoMap");
-map.addLayer(new OpenLayers.Layer.OSM());
-map.zoomToMaxExtent();
-
-
-function stopPolling(){
-}
 var myVar = setInterval(showlocation, 1000);
 
 function showlocation(){
-	navigator.geolocation.watchPosition(callback);
+	//navigator.geolocation.watchPosition(callback);
+    navigator.geolocation.getCurrentPosition(callback);
 }
 function callback(position){
     var d = new Date();
@@ -33,12 +24,16 @@ function callback(position){
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
 	document.getElementById('longitude').innerHTML=position.coords.longitude;
 }
-
-
-
-
-
- 
     
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(position.coords.latitude, -0.2), 
+    zoom: 10
+  }
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+ 
 </SCRIPT>
+</BODY>
 </HTML>
