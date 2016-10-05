@@ -19,7 +19,9 @@ function showlocation(){
 	navigator.geolocation.watchPosition(callback);
 }
 function callback(position){
-	document.getElementById('time').innerHTML=Date();
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+	document.getElementById('time').innerHTML=t;
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
 	document.getElementById('longitude').innerHTML=position.coords.longitude;
 }
