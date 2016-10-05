@@ -9,7 +9,7 @@ Latitude: <span id="latitude">..</span> <br>
 Longitude: <span id="longitude">..</span>
 <div id="map" style="width:100%;height:500px"></div>
 
-<SCRIPT src="https://maps.googleapis.com/maps/api/js?callback=myMap"></SCRIPT>
+<!-- <SCRIPT src="https://maps.googleapis.com/maps/api/js?callback=myMap"></SCRIPT> -->
 <SCRIPT>
 var myVar = setInterval(showlocation, 1000);
 
@@ -24,15 +24,16 @@ function callback(position){
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
 	document.getElementById('longitude').innerHTML=position.coords.longitude;
 }
-    
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {
-    center: new google.maps.LatLng(position.coords.latitude, -0.2), 
-    zoom: 10
-  }
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-}
+
+
+//function myMap() {
+//  var mapCanvas = document.getElementById("map");
+//  var mapOptions = {
+//    center: new google.maps.LatLng(position.coords.latitude, -0.2), 
+//    zoom: 10
+//  }
+//  var map = new google.maps.Map(mapCanvas, mapOptions);
+//}
  
 </SCRIPT>
 </BODY>
