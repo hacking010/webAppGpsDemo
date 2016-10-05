@@ -7,9 +7,16 @@ GPS Poll
 Time: <span id="time">..</span> <br>
 Latitude: <span id="latitude">..</span> <br>
 Longitude: <span id="longitude">..</span>
+<div id="demoMap" style="height:250px"></div>
 
 
 <SCRIPT>
+<script src="OpenLayers.js"></script>
+
+map = new OpenLayers.Map("demoMap");
+map.addLayer(new OpenLayers.Layer.OSM());
+map.zoomToMaxExtent();
+
 
 function stopPolling(){
 }
@@ -25,5 +32,12 @@ function callback(position){
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
 	document.getElementById('longitude').innerHTML=position.coords.longitude;
 }
+
+
+
+
+
+ 
+    
 </SCRIPT>
 </HTML>
